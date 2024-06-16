@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}New{% endblock title %}
+
+{% block content %}
+<h1>Create new post</h1>
+<p>Let's create a new post!</p>
+<div class="container">
+        <div class="row">
+            <div class="offset-2 col-8">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-dark" value="Create">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
